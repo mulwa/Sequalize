@@ -1,0 +1,17 @@
+{
+  "name": "sequalize_node",
+  "version": "1.0.0",
+  "description": "buildind RESTFUL API with sequelize ORM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mulwa chritopher",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.4"
+  }
+}
