@@ -1,20 +1,13 @@
 const Sequelize  =  require('sequelize');
 
-const dbConnection =  new Sequelize('Binder','root','sandamiano',{
+const sequelize =  new Sequelize('Binder','root','sandamiano',{
     host:'localhost',
     dialect:'mysql'
 });
 
-let User = dbConnection.define('user',{
-    firstname:Sequelize.STRING,
-    surname : Sequelize.STRING,
-    email: Sequelize.TEXT
+sequelize.sync().then(() =>{
+    console.log("Database connected successfully");
+}).catch((error)=>{
+    console.log(`Database connection failled ${error}`);
 });
-
-dbConnection.sync()
-.then(()=>{
-    User.findById(1).then((user) =>{
-        console.log(JSON.stringify(user.dataValues,undefined,2));
-    })
-})
-.catch(error =>console.log(error));
+module.exports = sequelize;
